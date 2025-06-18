@@ -15,8 +15,8 @@ export default function HomePage() {
     if (!hasCheckedAuth) {
       const mockUser = localStorage.getItem('mock-user');
       if (mockUser) {
-        console.log('Home: Redirecionando para chat - usuário encontrado');
-        router.push('/chat');
+        console.log('Home: Redirecionando para dashboard - usuário encontrado');
+        router.push('/dashboard');
       }
       setHasCheckedAuth(true);
     }

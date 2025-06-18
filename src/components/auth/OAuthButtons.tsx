@@ -16,7 +16,7 @@ export default function OAuthButtons() {
     setIsGoogleLoading(true);
     try {
       await signInWithGoogle();
-      router.push('/chat');
+      router.push('/dashboard');
     } catch (err: any) {
       toast({
         variant: 'destructive',
