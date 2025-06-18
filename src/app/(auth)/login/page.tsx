@@ -1,6 +1,7 @@
-import { Brain, Sparkles, Shield, Zap } from "lucide-react";
+import { Brain, Shield, Zap } from "lucide-react";
 import OAuthButtons from "@/components/auth/OAuthButtons";
 import { DashboardHeader } from "@/components/dashboard-header";
+import { WelcomeSection } from "@/components/welcome-section";
 
 export default function LoginPage() {
   // TODO: Implementar verificação de autenticação server-side
@@ -63,55 +64,9 @@ export default function LoginPage() {
           </div>
         </div>
 
-        {/* Painel direito - Branding */}
-        <div className="bg-primary relative hidden overflow-y-auto lg:flex lg:flex-col lg:items-center lg:justify-center lg:p-12">
-          <div className="max-w-md space-y-6 text-center">
-            <div className="relative">
-              <Brain className="text-primary-foreground mx-auto size-16" />
-              <Sparkles className="absolute -top-2 -right-2 h-6 w-6 animate-pulse text-yellow-300" />
-            </div>
-
-            <div className="space-y-4">
-              <h1 className="text-primary-foreground text-4xl font-light">Bem-vindo ao FlowEd</h1>
-              <p className="text-primary-foreground/80 text-lg">
-                Sua plataforma de IA que se adapta ao seu perfil cognitivo único para uma experiência de aprendizagem
-                personalizada no Flow Adapted.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-primary-foreground/90 text-sm font-medium">Perfis Cognitivos Suportados</h3>
-              <div className="flex flex-wrap justify-center gap-2">
-                <div className="bg-primary-foreground/20 text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/30 rounded-full border px-3 py-1 text-sm transition-colors">
-                  🧠 TDAH
-                </div>
-                <div className="bg-primary-foreground/20 text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/30 rounded-full border px-3 py-1 text-sm transition-colors">
-                  💙 Autismo
-                </div>
-                <div className="bg-primary-foreground/20 text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/30 rounded-full border px-3 py-1 text-sm transition-colors">
-                  👁️ Dislexia
-                </div>
-                <div className="bg-primary-foreground/20 text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/30 rounded-full border px-3 py-1 text-sm transition-colors">
-                  ⚖️ Padrão
-                </div>
-              </div>
-            </div>
-
-            <div className="text-primary-foreground/70 mt-8 space-y-3 text-sm">
-              <div className="flex items-center gap-2">
-                <div className="h-2 w-2 animate-pulse rounded-full bg-green-400"></div>
-                <span>Personalização automática baseada no seu perfil</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="h-2 w-2 animate-pulse rounded-full bg-blue-400"></div>
-                <span>Interface adaptativa para melhor acessibilidade</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="h-2 w-2 animate-pulse rounded-full bg-purple-400"></div>
-                <span>IA contextual que entende suas necessidades</span>
-              </div>
-            </div>
-          </div>
+        {/* Painel direito - Seção de Boas-vindas Dinâmica */}
+        <div className="hidden lg:block">
+          <WelcomeSection />
         </div>
       </div>
     </div>
