@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { 
   PlusCircle, 
@@ -37,27 +37,19 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useCognitiveProfile } from "@/hooks/use-cognitive-profile";
-import { useChats, useChatActions, useActiveChatId } from "@/store";
+import { useChats, useChatActions, useActiveChatId, useAuthUser } from "@/store";
 import { cn } from "@/lib/utils";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const router = useRouter();
-  const [currentUser, setCurrentUser] = useState<any>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [isCreatingChat, setIsCreatingChat] = useState(false);
-  
-  const { icon: CognitiveIcon, color, profileConfig } = useCognitiveProfile();
+
+  const { icon: CognitiveIcon, color } = useCognitiveProfile();
   const chats = useChats();
   const chatActions = useChatActions();
   const activeChatId = useActiveChatId();
-
-  // Carregar usuário
-  useEffect(() => {
-    const savedMockUser = localStorage.getItem('mock-user');
-    if (savedMockUser) {
-      setCurrentUser(JSON.parse(savedMockUser));
-    }
-  }, []);
+  const currentUser = useAuthUser();
 
   // Filtrar chats baseado na busca
   const filteredChats = searchQuery 

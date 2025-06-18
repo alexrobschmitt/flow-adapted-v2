@@ -6,23 +6,19 @@ import { Brain, Sparkles, MessageSquare, Zap, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useCognitiveProfile } from "@/hooks/use-cognitive-profile";
-import { useChatActions } from "@/store";
+import { useChatActions, useAuthUser } from "@/store";
 
 export function WelcomeChat() {
   const router = useRouter();
-  const [currentUser, setCurrentUser] = useState<any>(null);
   const [isCreatingChat, setIsCreatingChat] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   const { icon: CognitiveIcon, color, profileConfig } = useCognitiveProfile();
   const chatActions = useChatActions();
+  const currentUser = useAuthUser();
 
   useEffect(() => {
     setMounted(true);
-    const savedMockUser = localStorage.getItem('mock-user');
-    if (savedMockUser) {
-      setCurrentUser(JSON.parse(savedMockUser));
-    }
   }, []);
 
   const handleCreateNewChat = async () => {

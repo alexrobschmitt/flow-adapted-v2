@@ -19,7 +19,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useCognitiveProfile } from "@/hooks/use-cognitive-profile";
-import { useChatActions } from "@/store";
+import { useChatActions, useAuthUser } from "@/store";
 
 // Componente seguro para SidebarTrigger que só renderiza se estiver dentro de SidebarProvider
 function SafeSidebarTrigger() {
@@ -55,7 +55,6 @@ export function DashboardHeader({
 }: Readonly<DashboardHeaderProps>) {
   const router = useRouter();
   const [isHydrated, setIsHydrated] = useState(false);
-  const [currentUser, setCurrentUser] = useState<any>(null);
   const [isCreatingChat, setIsCreatingChat] = useState(false);
 
   // Usar sidebar apenas se estiver disponível (dentro de SidebarProvider)
@@ -69,15 +68,11 @@ export function DashboardHeader({
   }
 
   const chatActions = useChatActions();
+  const currentUser = useAuthUser();
 
   // Evitar erro de hidratação
   useEffect(() => {
     setIsHydrated(true);
-    // Carregar usuário
-    const savedMockUser = localStorage.getItem('mock-user');
-    if (savedMockUser) {
-      setCurrentUser(JSON.parse(savedMockUser));
-    }
   }, []);
 
   const { icon: CognitiveProfileIcon, color } = useCognitiveProfile();
