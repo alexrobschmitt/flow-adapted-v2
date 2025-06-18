@@ -1,29 +1,43 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { signInWithGoogle } from '@/lib/firebase/auth';
+import { useAuthUser } from '@/store';
+import { useAuth } from '@/providers/AuthProvider';
 
 export default function OAuthButtons() {
   const [isGoogleLoading, setIsGoogleLoading] = useState(false);
   const router = useRouter();
   const { toast } = useToast();
-  
+  const user = useAuthUser();
+  const { isInitialized } = useAuth();
+
+  // Redirecionar quando usuário for autenticado
+  useEffect(() => {
+    if (isInitialized && user && !isGoogleLoading) {
+      console.log('OAuthButtons: Usuário autenticado, redirecionando para dashboard');
+      router.push('/dashboard');
+    }
+  }, [user, isInitialized, router, isGoogleLoading]);
+
   const handleGoogleLogin = async () => {
     setIsGoogleLoading(true);
     try {
+      console.log('OAuthButtons: Iniciando login com Google');
       await signInWithGoogle();
-      router.push('/dashboard');
+      console.log('OAuthButtons: Login com Google concluído');
+      // Não redirecionar aqui - deixar o useEffect fazer isso quando o user for atualizado
     } catch (err: any) {
+      console.error('OAuthButtons: Erro no login:', err);
       toast({
         variant: 'destructive',
-        title: 'Authentication error',
+        title: 'Erro de autenticação',
         description: err.message,
       });
-    } finally {
       setIsGoogleLoading(false);
     }
   };

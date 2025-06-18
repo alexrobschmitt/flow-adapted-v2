@@ -6,6 +6,7 @@ import { ThemeProvider } from "next-themes";
 
 import { CognitiveThemeProvider } from "@/components/cognitive-theme-provider";
 import { AuthProvider } from "@/providers/AuthProvider";
+import { StoreProvider } from "@/store/store-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { APP_CONFIG } from "@/config/app";
 
@@ -54,8 +55,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <ThemeProvider attribute="class" defaultTheme="system" disableTransitionOnChange enableSystem>
           <CognitiveThemeProvider>
             <AuthProvider>
-              {children}
-              <Toaster />
+              <StoreProvider>
+                {children}
+                <Toaster />
+              </StoreProvider>
             </AuthProvider>
           </CognitiveThemeProvider>
         </ThemeProvider>
