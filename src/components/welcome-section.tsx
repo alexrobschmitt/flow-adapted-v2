@@ -2,13 +2,20 @@
 
 import { Sparkles, Brain } from "lucide-react";
 import { useCognitiveProfile } from "@/hooks/use-cognitive-profile";
+import { useCognitiveTheme } from "@/components/cognitive-theme-provider";
+import type { CognitiveProfile } from "@/types/cognitive";
 
 export function WelcomeSection() {
-  const { icon: Icon, color: profileColor } = useCognitiveProfile();
+  const { icon: Icon, color: profileColor, profile } = useCognitiveProfile();
+  const { setProfile } = useCognitiveTheme();
 
   // Fallback para evitar erro de hidratação
   const SafeIcon = Icon || Brain;
   const safeColor = profileColor || "#3b82f6";
+
+  const handleProfileClick = (newProfile: CognitiveProfile) => {
+    setProfile(newProfile);
+  };
 
   return (
     <div
@@ -35,18 +42,30 @@ export function WelcomeSection() {
         <div className="space-y-4">
           <h3 className="text-white/90 text-sm font-medium">Perfis Cognitivos Suportados</h3>
           <div className="flex flex-wrap justify-center gap-2">
-            <div className="bg-white/20 text-white border-white/30 hover:bg-white/30 rounded-full border px-3 py-1 text-sm transition-colors">
+            <button
+              onClick={() => handleProfileClick("adhd")}
+              className={`bg-white/20 text-white border-white/30 hover:bg-white/30 rounded-full border px-3 py-1 text-sm transition-colors cursor-pointer ${profile === "adhd" ? "ring-2 ring-white/50" : ""}`}
+            >
               🧠 TDAH
-            </div>
-            <div className="bg-white/20 text-white border-white/30 hover:bg-white/30 rounded-full border px-3 py-1 text-sm transition-colors">
+            </button>
+            <button
+              onClick={() => handleProfileClick("autism")}
+              className={`bg-white/20 text-white border-white/30 hover:bg-white/30 rounded-full border px-3 py-1 text-sm transition-colors cursor-pointer ${profile === "autism" ? "ring-2 ring-white/50" : ""}`}
+            >
               💙 Autismo
-            </div>
-            <div className="bg-white/20 text-white border-white/30 hover:bg-white/30 rounded-full border px-3 py-1 text-sm transition-colors">
+            </button>
+            <button
+              onClick={() => handleProfileClick("dyslexia")}
+              className={`bg-white/20 text-white border-white/30 hover:bg-white/30 rounded-full border px-3 py-1 text-sm transition-colors cursor-pointer ${profile === "dyslexia" ? "ring-2 ring-white/50" : ""}`}
+            >
               👁️ Dislexia
-            </div>
-            <div className="bg-white/20 text-white border-white/30 hover:bg-white/30 rounded-full border px-3 py-1 text-sm transition-colors">
+            </button>
+            <button
+              onClick={() => handleProfileClick("default")}
+              className={`bg-white/20 text-white border-white/30 hover:bg-white/30 rounded-full border px-3 py-1 text-sm transition-colors cursor-pointer ${profile === "default" ? "ring-2 ring-white/50" : ""}`}
+            >
               ⚖️ Padrão
-            </div>
+            </button>
           </div>
         </div>
 
