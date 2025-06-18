@@ -20,6 +20,9 @@
   --cognitive-popover: #ffffff;
   --cognitive-popover-foreground: #0f172a;
 
+  /* Aplicar fonte Lexend por padrão */
+  font-family: var(--font-lexend), sans-serif;
+
   /* Sobrescrever variáveis padrão do shadcn/ui - formato oklch - AZUL PADRÃO */
   --primary: oklch(0.64 0.17 258.44);
   --primary-foreground: oklch(1 0 0);
@@ -61,6 +64,9 @@
   --cognitive-popover: #ffffff;
   --cognitive-popover-foreground: #9a3412;
 
+  /* Aplicar fonte Lexend por padrão */
+  font-family: var(--font-lexend), sans-serif;
+
   /* Sobrescrever variáveis padrão do shadcn/ui - formato oklch - LARANJA ADHD */
   --primary: oklch(0.64 0.17 41.12);
   --primary-foreground: oklch(1 0 0);
@@ -101,6 +107,9 @@
   --cognitive-card-foreground: #1e40af;
   --cognitive-popover: #ffffff;
   --cognitive-popover-foreground: #1e40af;
+
+  /* Aplicar fonte Lexend por padrão */
+  font-family: var(--font-lexend), sans-serif;
 
   /* Sobrescrever variáveis padrão do shadcn/ui - formato oklch - AZUL AUTISMO */
   --primary: oklch(0.64 0.17 258.44);

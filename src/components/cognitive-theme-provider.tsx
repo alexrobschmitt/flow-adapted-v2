@@ -8,8 +8,6 @@ export type { CognitiveProfile };
 interface CognitiveThemeContextType {
   profile: CognitiveProfile;
   setProfile: (profile: CognitiveProfile) => void;
-  isDyslexiaFont: boolean;
-  setIsDyslexiaFont: (enabled: boolean) => void;
 }
 
 const CognitiveThemeContext = createContext<CognitiveThemeContextType | undefined>(undefined);
@@ -20,7 +18,6 @@ interface CognitiveThemeProviderProps {
 
 export function CognitiveThemeProvider({ children }: CognitiveThemeProviderProps) {
   const [profile, setProfileState] = useState<CognitiveProfile>("default");
-  const [isDyslexiaFont, setIsDyslexiaFontState] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   // Carregar preferências do localStorage na inicialização
@@ -28,15 +25,12 @@ export function CognitiveThemeProvider({ children }: CognitiveThemeProviderProps
     try {
       if (typeof window !== "undefined" && window.localStorage) {
         const savedProfile = localStorage.getItem("cognitive-profile") as CognitiveProfile;
-        const savedFont = localStorage.getItem("dyslexia-font") === "true";
-        
+
         const validProfiles: CognitiveProfile[] = ["default", "adhd", "autism", "dyslexia"];
-        
+
         if (savedProfile && validProfiles.includes(savedProfile)) {
           setProfileState(savedProfile);
         }
-        
-        setIsDyslexiaFontState(savedFont);
       }
     } catch (error) {
       console.warn("Erro ao carregar preferências cognitivas:", error);
@@ -54,40 +48,29 @@ export function CognitiveThemeProvider({ children }: CognitiveThemeProviderProps
     // Aplicar nova classe
     root.classList.add(`cognitive-${profile}`);
 
-    // Aplicar fonte Lexend otimizada se ativada
-    if (isDyslexiaFont) {
-      root.classList.add("dyslexia-font");
-    } else {
-      root.classList.remove("dyslexia-font");
-    }
+    // Aplicar fonte Lexend sempre (padrão do sistema)
+    root.classList.add("dyslexia-font");
 
     // Salvar no localStorage
     try {
       if (typeof window !== "undefined" && window.localStorage) {
         localStorage.setItem("cognitive-profile", profile);
-        localStorage.setItem("dyslexia-font", isDyslexiaFont.toString());
       }
     } catch (error) {
       console.warn("Erro ao salvar preferências cognitivas:", error);
     }
-  }, [profile, isDyslexiaFont]);
+  }, [profile]);
 
   const setProfile = (newProfile: CognitiveProfile) => {
     setProfileState(newProfile);
-  };
-
-  const setIsDyslexiaFont = (enabled: boolean) => {
-    setIsDyslexiaFontState(enabled);
   };
 
   const value = useMemo(
     () => ({
       profile: mounted ? profile : "default",
       setProfile,
-      isDyslexiaFont: mounted ? isDyslexiaFont : false,
-      setIsDyslexiaFont,
     }),
-    [profile, isDyslexiaFont, mounted]
+    [profile, mounted]
   );
 
   return (

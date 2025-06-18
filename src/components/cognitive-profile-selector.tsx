@@ -10,7 +10,6 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-  DropdownMenuCheckboxItem,
 } from "@/components/ui/dropdown-menu";
 import { useCognitiveProfile } from "@/hooks/use-cognitive-profile";
 import { useCognitiveTheme } from "@/components/cognitive-theme-provider";
@@ -27,23 +26,20 @@ export function CognitiveProfileSelector({
   className, 
   variant = "default" 
 }: CognitiveProfileSelectorProps) {
-  const { 
-    profile, 
-    profileConfig, 
-    icon, 
-    color, 
-    description 
+  const {
+    profile,
+    profileConfig,
+    icon,
+    color
   } = useCognitiveProfile();
   
-  const { setProfile, isDyslexiaFont, setIsDyslexiaFont } = useCognitiveTheme();
+  const { setProfile } = useCognitiveTheme();
 
   const handleProfileChange = (newProfile: CognitiveProfile) => {
     setProfile(newProfile);
   };
 
-  const handleToggleDyslexiaFont = () => {
-    setIsDyslexiaFont(!isDyslexiaFont);
-  };
+
 
   const Icon = icon;
 
@@ -71,12 +67,10 @@ export function CognitiveProfileSelector({
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-64">
-          <ProfileDropdownContent 
+          <ProfileDropdownContent
             profile={profile}
             config={profileConfig}
-            isDyslexiaFont={isDyslexiaFont}
             onProfileChange={handleProfileChange}
-            onToggleDyslexiaFont={handleToggleDyslexiaFont}
           />
         </DropdownMenuContent>
       </DropdownMenu>
@@ -109,12 +103,10 @@ export function CognitiveProfileSelector({
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-64">
-          <ProfileDropdownContent 
+          <ProfileDropdownContent
             profile={profile}
             config={profileConfig}
-            isDyslexiaFont={isDyslexiaFont}
             onProfileChange={handleProfileChange}
-            onToggleDyslexiaFont={handleToggleDyslexiaFont}
           />
         </DropdownMenuContent>
       </DropdownMenu>
@@ -148,12 +140,10 @@ export function CognitiveProfileSelector({
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-64">
-        <ProfileDropdownContent 
+        <ProfileDropdownContent
           profile={profile}
           config={profileConfig}
-          isDyslexiaFont={isDyslexiaFont}
           onProfileChange={handleProfileChange}
-          onToggleDyslexiaFont={handleToggleDyslexiaFont}
         />
       </DropdownMenuContent>
     </DropdownMenu>
@@ -163,17 +153,13 @@ export function CognitiveProfileSelector({
 interface ProfileDropdownContentProps {
   profile: CognitiveProfile;
   config: any;
-  isDyslexiaFont: boolean;
   onProfileChange: (profile: CognitiveProfile) => void;
-  onToggleDyslexiaFont: () => void;
 }
 
 function ProfileDropdownContent({
   profile,
   config,
-  isDyslexiaFont,
   onProfileChange,
-  onToggleDyslexiaFont,
 }: ProfileDropdownContentProps) {
   return (
     <>
@@ -217,20 +203,7 @@ function ProfileDropdownContent({
         );
       })}
       
-      <DropdownMenuSeparator />
-      
-      <DropdownMenuCheckboxItem
-        checked={isDyslexiaFont}
-        onCheckedChange={onToggleDyslexiaFont}
-        className="flex items-center gap-3"
-      >
-        <div className="flex-1">
-          <div className="font-medium">Fonte Lexend</div>
-          <div className="text-xs text-muted-foreground">
-            Fonte otimizada para dislexia e melhor legibilidade
-          </div>
-        </div>
-      </DropdownMenuCheckboxItem>
+
     </>
   );
 }

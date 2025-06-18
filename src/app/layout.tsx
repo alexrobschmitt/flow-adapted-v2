@@ -37,22 +37,18 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                   const validProfiles = ['default', 'adhd', 'autism', 'dyslexia'];
                   const profile = savedProfile && validProfiles.includes(savedProfile) ? savedProfile : 'default';
 
-                  // Carregar fonte Lexend otimizada
-                  const savedFont = localStorage.getItem('dyslexia-font') === 'true';
-
                   // Aplicar classes imediatamente
                   const root = document.documentElement;
                   root.classList.remove('cognitive-adhd', 'cognitive-autism', 'cognitive-dyslexia', 'cognitive-default');
                   root.classList.add('cognitive-' + profile);
 
-                  if (savedFont) {
-                    root.classList.add('dyslexia-font');
-                  } else {
-                    root.classList.remove('dyslexia-font');
-                  }
+                  // Aplicar fonte Lexend sempre (padrão do sistema)
+                  root.classList.add('dyslexia-font');
                 } catch (e) {
-                  // Fallback para perfil padrão
-                  document.documentElement.classList.add('cognitive-default');
+                  // Fallback para perfil padrão com fonte Lexend
+                  const root = document.documentElement;
+                  root.classList.add('cognitive-default');
+                  root.classList.add('dyslexia-font');
                 }
               })();
             `,
