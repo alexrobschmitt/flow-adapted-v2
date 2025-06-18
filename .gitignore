@@ -1,0 +1,168 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Testing
+/coverage
+.nyc_output
+junit.xml
+
+# Next.js
+/.next/
+/out/
+.next
+
+# Production
+/build
+/dist
+*.tgz
+*.tar.gz
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Environment variables
+.env
+.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Certificates and keys
+*.pem
+*.key
+*.crt
+
+# Vercel
+.vercel
+.vercel.json
+
+# Firebase
+.firebase/
+.firebaserc
+firebase-debug.log
+firebase-debug.*.log
+ui-debug.log
+database-debug.log
+firestore-debug.log
+pubsub-debug.log
+
+# Firebase Admin SDK private keys
+*-firebase-adminsdk-*.json
+firebase-adminsdk-*.json
+
+# Cache directories
+.cache/
+.parcel-cache/
+.eslintcache
+.stylelintcache
+
+# Turbo
+.turbo
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Temporary folders
+tmp/
+temp/
+
+# Archives
+*.zip
+*.tar
+*.gz
+*.rar
+*.7z
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Backup files
+*.backup
+*.bak
+*.tmp
+
+# Bundle analysis
+bundle-analyzer-report.html
+.bundle-analyzer/
+
+# Performance monitoring
+.clinic/
+profile-*
+
+# Lighthouse reports
+lighthouse-report.html
+lighthouse-report.json
+
+# PWA
+sw.js
+workbox-*.js
+
+# Storybook
+storybook-static/
+
+# Sentry
+.sentryclirc
+
+# Custom ignores for Flow Adapted
+/olds
+cognitive-profiles-backup/
+user-data-exports/
+chat-exports/
+analytics-data/
+.secrets
+secrets/
+private/
+
+# Large media files (uncomment if needed)
+# *.mp4
+# *.avi
+# *.mov
+# *.mp3
+# *.wav
+
+# AI/ML models (if any)
+*.model
+*.pkl
+*.h5
+
+# Local development
+scratch/
+playground/
+experiments/
+.local

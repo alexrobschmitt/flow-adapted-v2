@@ -1,0 +1,282 @@
+/* Cognitive Profiles CSS Variables */
+
+/* Default Profile */
+:root.cognitive-default {
+  --cognitive-primary: #3b82f6;
+  --cognitive-primary-foreground: #ffffff;
+  --cognitive-secondary: #f1f5f9;
+  --cognitive-secondary-foreground: #0f172a;
+  --cognitive-accent: #e2e8f0;
+  --cognitive-accent-foreground: #334155;
+  --cognitive-muted: #f8fafc;
+  --cognitive-muted-foreground: #64748b;
+  --cognitive-border: #e2e8f0;
+  --cognitive-input: #ffffff;
+  --cognitive-ring: #3b82f6;
+  --cognitive-background: #ffffff;
+  --cognitive-foreground: #0f172a;
+  --cognitive-card: #ffffff;
+  --cognitive-card-foreground: #0f172a;
+  --cognitive-popover: #ffffff;
+  --cognitive-popover-foreground: #0f172a;
+
+  /* Sobrescrever variáveis padrão do shadcn/ui - formato oklch - AZUL PADRÃO */
+  --primary: oklch(0.64 0.17 258.44);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.94 0.03 258.5);
+  --secondary-foreground: oklch(0.3 0.08 258.44);
+  --muted: oklch(0.97 0.01 258.5);
+  --muted-foreground: oklch(0.55 0.08 258.44);
+  --accent: oklch(0.88 0.05 258.5);
+  --accent-foreground: oklch(0.35 0.1 258.44);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.86 0.04 258.5);
+  --input: oklch(0.94 0.03 258.5);
+  --ring: oklch(0.64 0.17 258.44);
+  --background: oklch(0.98 0.01 258.5);
+  --foreground: oklch(0.3 0.08 258.44);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.3 0.08 258.44);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.3 0.08 258.44);
+}
+
+/* ADHD Profile - Cores vibrantes e energéticas (LARANJA) */
+:root.cognitive-adhd {
+  --cognitive-primary: #ea580c;
+  --cognitive-primary-foreground: #ffffff;
+  --cognitive-secondary: #fed7aa;
+  --cognitive-secondary-foreground: #9a3412;
+  --cognitive-accent: #fdba74;
+  --cognitive-accent-foreground: #c2410c;
+  --cognitive-muted: #fff7ed;
+  --cognitive-muted-foreground: #ea580c;
+  --cognitive-border: #fdba74;
+  --cognitive-input: #fff7ed;
+  --cognitive-ring: #ea580c;
+  --cognitive-background: #ffffff;
+  --cognitive-foreground: #9a3412;
+  --cognitive-card: #ffffff;
+  --cognitive-card-foreground: #9a3412;
+  --cognitive-popover: #ffffff;
+  --cognitive-popover-foreground: #9a3412;
+
+  /* Sobrescrever variáveis padrão do shadcn/ui - formato oklch - LARANJA ADHD */
+  --primary: oklch(0.64 0.17 41.12);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.9 0.05 41.12);
+  --secondary-foreground: oklch(0.35 0.12 41.12);
+  --muted: oklch(0.98 0.01 41.12);
+  --muted-foreground: oklch(0.55 0.12 41.12);
+  --accent: oklch(0.85 0.08 41.12);
+  --accent-foreground: oklch(0.4 0.14 41.12);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.85 0.08 41.12);
+  --input: oklch(0.98 0.01 41.12);
+  --ring: oklch(0.64 0.17 41.12);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.35 0.12 41.12);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.35 0.12 41.12);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.35 0.12 41.12);
+}
+
+/* Autism Profile - Cores calmas e serenas (AZUL) */
+:root.cognitive-autism {
+  --cognitive-primary: #3b82f6;
+  --cognitive-primary-foreground: #ffffff;
+  --cognitive-secondary: #dbeafe;
+  --cognitive-secondary-foreground: #1e40af;
+  --cognitive-accent: #bfdbfe;
+  --cognitive-accent-foreground: #2563eb;
+  --cognitive-muted: #f0f9ff;
+  --cognitive-muted-foreground: #3b82f6;
+  --cognitive-border: #bfdbfe;
+  --cognitive-input: #f0f9ff;
+  --cognitive-ring: #3b82f6;
+  --cognitive-background: #f8fafc;
+  --cognitive-foreground: #1e40af;
+  --cognitive-card: #ffffff;
+  --cognitive-card-foreground: #1e40af;
+  --cognitive-popover: #ffffff;
+  --cognitive-popover-foreground: #1e40af;
+
+  /* Sobrescrever variáveis padrão do shadcn/ui - formato oklch - AZUL AUTISMO */
+  --primary: oklch(0.64 0.17 258.44);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.94 0.03 258.5);
+  --secondary-foreground: oklch(0.3 0.08 258.44);
+  --muted: oklch(0.97 0.01 258.5);
+  --muted-foreground: oklch(0.55 0.08 258.44);
+  --accent: oklch(0.88 0.05 258.5);
+  --accent-foreground: oklch(0.35 0.1 258.44);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.86 0.04 258.5);
+  --input: oklch(0.94 0.03 258.5);
+  --ring: oklch(0.64 0.17 258.44);
+  --background: oklch(0.98 0.01 258.5);
+  --foreground: oklch(0.3 0.08 258.44);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.3 0.08 258.44);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.3 0.08 258.44);
+}
+
+/* Dyslexia Profile - Cores otimizadas para legibilidade (CREME/AMARELO) */
+:root.cognitive-dyslexia {
+  --cognitive-primary: #ca8a04;
+  --cognitive-primary-foreground: #ffffff;
+  --cognitive-secondary: #fef3c7;
+  --cognitive-secondary-foreground: #92400e;
+  --cognitive-accent: #fde68a;
+  --cognitive-accent-foreground: #b45309;
+  --cognitive-muted: #fffbeb;
+  --cognitive-muted-foreground: #d97706;
+  --cognitive-border: #fde68a;
+  --cognitive-input: #fffbeb;
+  --cognitive-ring: #ca8a04;
+  --cognitive-background: #fffbeb;
+  --cognitive-foreground: #92400e;
+  --cognitive-card: #fefce8;
+  --cognitive-card-foreground: #92400e;
+  --cognitive-popover: #fefce8;
+  --cognitive-popover-foreground: #92400e;
+
+  /* Aplicar fonte Lexend por padrão */
+  font-family: var(--font-lexend), sans-serif;
+
+  /* Sobrescrever variáveis padrão do shadcn/ui - formato oklch - AMARELO DISLEXIA */
+  --primary: oklch(0.64 0.12 84.43);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.94 0.04 84.43);
+  --secondary-foreground: oklch(0.35 0.08 84.43);
+  --muted: oklch(0.98 0.02 84.43);
+  --muted-foreground: oklch(0.55 0.1 84.43);
+  --accent: oklch(0.88 0.06 84.43);
+  --accent-foreground: oklch(0.4 0.1 84.43);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.88 0.06 84.43);
+  --input: oklch(0.98 0.02 84.43);
+  --ring: oklch(0.64 0.12 84.43);
+  --background: oklch(0.98 0.02 84.43);
+  --foreground: oklch(0.35 0.08 84.43);
+  --card: oklch(0.99 0.01 84.43);
+  --card-foreground: oklch(0.35 0.08 84.43);
+  --popover: oklch(0.99 0.01 84.43);
+  --popover-foreground: oklch(0.35 0.08 84.43);
+}
+
+/* DARK MODE VARIANTS */
+
+/* Default Profile - Dark Mode */
+:root.dark.cognitive-default {
+  /* Sobrescrever variáveis padrão do shadcn/ui - formato oklch - AZUL PADRÃO DARK */
+  --primary: oklch(0.7 0.15 258.44);
+  --primary-foreground: oklch(0.15 0.08 258.44);
+  --secondary: oklch(0.2 0.1 258.44);
+  --secondary-foreground: oklch(0.9 0.05 258.44);
+  --muted: oklch(0.12 0.05 258.44);
+  --muted-foreground: oklch(0.7 0.12 258.44);
+  --accent: oklch(0.25 0.12 258.44);
+  --accent-foreground: oklch(0.85 0.08 258.44);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.55 0.12 258.44);
+  --background: oklch(0.12 0.05 258.44);
+  --foreground: oklch(0.9 0.05 258.44);
+  --card: oklch(0.2 0.1 258.44);
+  --card-foreground: oklch(0.9 0.05 258.44);
+  --popover: oklch(0.2 0.1 258.44);
+  --popover-foreground: oklch(0.9 0.05 258.44);
+}
+
+/* ADHD Profile - Dark Mode */
+:root.dark.cognitive-adhd {
+  /* Sobrescrever variáveis padrão do shadcn/ui - formato oklch - LARANJA ADHD DARK */
+  --primary: oklch(0.7 0.15 41.12);
+  --primary-foreground: oklch(0.15 0.08 41.12);
+  --secondary: oklch(0.2 0.1 41.12);
+  --secondary-foreground: oklch(0.9 0.05 41.12);
+  --muted: oklch(0.12 0.05 41.12);
+  --muted-foreground: oklch(0.7 0.12 41.12);
+  --accent: oklch(0.25 0.12 41.12);
+  --accent-foreground: oklch(0.85 0.08 41.12);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.55 0.12 41.12);
+  --background: oklch(0.12 0.05 41.12);
+  --foreground: oklch(0.9 0.05 41.12);
+  --card: oklch(0.2 0.1 41.12);
+  --card-foreground: oklch(0.9 0.05 41.12);
+  --popover: oklch(0.2 0.1 41.12);
+  --popover-foreground: oklch(0.9 0.05 41.12);
+}
+
+/* Autism Profile - Dark Mode */
+:root.dark.cognitive-autism {
+  /* Sobrescrever variáveis padrão do shadcn/ui - formato oklch - AZUL AUTISMO DARK */
+  --primary: oklch(0.7 0.15 258.44);
+  --primary-foreground: oklch(0.15 0.08 258.44);
+  --secondary: oklch(0.2 0.1 258.44);
+  --secondary-foreground: oklch(0.9 0.05 258.44);
+  --muted: oklch(0.12 0.05 258.44);
+  --muted-foreground: oklch(0.7 0.12 258.44);
+  --accent: oklch(0.25 0.12 258.44);
+  --accent-foreground: oklch(0.85 0.08 258.44);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.55 0.12 258.44);
+  --background: oklch(0.12 0.05 258.44);
+  --foreground: oklch(0.9 0.05 258.44);
+  --card: oklch(0.2 0.1 258.44);
+  --card-foreground: oklch(0.9 0.05 258.44);
+  --popover: oklch(0.2 0.1 258.44);
+  --popover-foreground: oklch(0.9 0.05 258.44);
+}
+
+/* Dyslexia Profile - Dark Mode */
+:root.dark.cognitive-dyslexia {
+  /* Sobrescrever variáveis padrão do shadcn/ui - formato oklch - AMARELO DISLEXIA DARK */
+  --primary: oklch(0.7 0.15 84.43);
+  --primary-foreground: oklch(0.1 0.1 84.43);
+  --secondary: oklch(0.6 0.1 84.43);
+  --secondary-foreground: oklch(0.1 0.1 84.43);
+  --accent: oklch(0.15 0.08 84.43);
+  --accent-foreground: oklch(0.8 0.15 84.43);
+  --background: oklch(0.12 0.05 84.43);
+  --foreground: oklch(0.9 0.05 84.43);
+  --card: oklch(0.16 0.05 84.43);
+  --card-foreground: oklch(0.9 0.05 84.43);
+  --border: oklch(0.25 0.05 84.43);
+  --muted: oklch(0.18 0.05 84.43);
+  --muted-foreground: oklch(0.65 0.1 84.43);
+  --popover: oklch(0.16 0.05 84.43);
+  --popover-foreground: oklch(0.9 0.05 84.43);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.55 0.12 84.43);
+  --destructive: oklch(0.704 0.191 22.216);
+}
+
+/* Fontes para acessibilidade - Lexend é a fonte principal otimizada para dislexia */
+.dyslexia-font {
+  font-family: var(--font-lexend), "OpenDyslexic", "Comic Sans MS", cursive, sans-serif !important;
+}
+
+.dyslexia-font * {
+  font-family: inherit !important;
+}
+
+/* Fonte Lexend para melhor legibilidade */
+.lexend-font {
+  font-family: var(--font-lexend), sans-serif !important;
+}
+
+.lexend-font * {
+  font-family: inherit !important;
+}
+
+
