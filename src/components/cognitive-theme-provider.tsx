@@ -48,9 +48,6 @@ export function CognitiveThemeProvider({ children }: CognitiveThemeProviderProps
     // Aplicar nova classe
     root.classList.add(`cognitive-${profile}`);
 
-    // Aplicar fonte Lexend sempre (padrão do sistema)
-    root.classList.add("dyslexia-font");
-
     // Salvar no localStorage
     try {
       if (typeof window !== "undefined" && window.localStorage) {

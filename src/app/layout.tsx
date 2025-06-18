@@ -41,14 +41,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                   const root = document.documentElement;
                   root.classList.remove('cognitive-adhd', 'cognitive-autism', 'cognitive-dyslexia', 'cognitive-default');
                   root.classList.add('cognitive-' + profile);
-
-                  // Aplicar fonte Lexend sempre (padrão do sistema)
-                  root.classList.add('dyslexia-font');
                 } catch (e) {
-                  // Fallback para perfil padrão com fonte Lexend
-                  const root = document.documentElement;
-                  root.classList.add('cognitive-default');
-                  root.classList.add('dyslexia-font');
+                  // Fallback para perfil padrão
+                  document.documentElement.classList.add('cognitive-default');
                 }
               })();
             `,

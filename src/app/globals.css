@@ -209,9 +209,9 @@
   --sidebar-border: oklch(0.25 0.05 220);
 }
 
-/* Tipografia para Dislexia */
+/* Tipografia para Dislexia - usando CSS variable */
 [data-cognitive-profile="dyslexia"] {
-  font-family: "Lexend", system-ui, sans-serif;
+  font-family: var(--font-lexend), system-ui, sans-serif;
   font-size: 1.1em;
   line-height: 1.8;
   letter-spacing: 0.05em;
@@ -238,7 +238,7 @@
 
   body {
     @apply bg-background text-foreground overscroll-none;
-    font-family: "Lexend", system-ui, sans-serif;
+    font-family: var(--font-lexend), system-ui, sans-serif;
     font-feature-settings: "kern" 1, "liga" 1;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;

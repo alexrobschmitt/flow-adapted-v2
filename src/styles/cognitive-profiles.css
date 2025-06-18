@@ -20,9 +20,6 @@
   --cognitive-popover: #ffffff;
   --cognitive-popover-foreground: #0f172a;
 
-  /* Aplicar fonte Lexend por padrão */
-  font-family: var(--font-lexend), sans-serif;
-
   /* Sobrescrever variáveis padrão do shadcn/ui - formato oklch - AZUL PADRÃO */
   --primary: oklch(0.64 0.17 258.44);
   --primary-foreground: oklch(1 0 0);
@@ -63,9 +60,6 @@
   --cognitive-card-foreground: #9a3412;
   --cognitive-popover: #ffffff;
   --cognitive-popover-foreground: #9a3412;
-
-  /* Aplicar fonte Lexend por padrão */
-  font-family: var(--font-lexend), sans-serif;
 
   /* Sobrescrever variáveis padrão do shadcn/ui - formato oklch - LARANJA ADHD */
   --primary: oklch(0.64 0.17 41.12);
@@ -108,9 +102,6 @@
   --cognitive-popover: #ffffff;
   --cognitive-popover-foreground: #1e40af;
 
-  /* Aplicar fonte Lexend por padrão */
-  font-family: var(--font-lexend), sans-serif;
-
   /* Sobrescrever variáveis padrão do shadcn/ui - formato oklch - AZUL AUTISMO */
   --primary: oklch(0.64 0.17 258.44);
   --primary-foreground: oklch(1 0 0);
@@ -151,9 +142,6 @@
   --cognitive-card-foreground: #92400e;
   --cognitive-popover: #fefce8;
   --cognitive-popover-foreground: #92400e;
-
-  /* Aplicar fonte Lexend por padrão */
-  font-family: var(--font-lexend), sans-serif;
 
   /* Sobrescrever variáveis padrão do shadcn/ui - formato oklch - AMARELO DISLEXIA */
   --primary: oklch(0.64 0.12 84.43);
@@ -270,21 +258,14 @@
   --destructive: oklch(0.704 0.191 22.216);
 }
 
-/* Fontes para acessibilidade - Lexend é a fonte principal otimizada para dislexia */
+/* Lexend Font System - Centralized font configuration */
+.lexend-font,
 .dyslexia-font {
-  font-family: var(--font-lexend), "OpenDyslexic", "Comic Sans MS", cursive, sans-serif !important;
+  font-family: var(--font-lexend), "OpenDyslexic", "Comic Sans MS", system-ui, sans-serif !important;
 }
 
+.lexend-font *,
 .dyslexia-font * {
-  font-family: inherit !important;
-}
-
-/* Fonte Lexend para melhor legibilidade */
-.lexend-font {
-  font-family: var(--font-lexend), sans-serif !important;
-}
-
-.lexend-font * {
   font-family: inherit !important;
 }
 
